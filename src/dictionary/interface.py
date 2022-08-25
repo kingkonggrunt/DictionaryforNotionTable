@@ -19,10 +19,10 @@ class Dictionary:
     definition.parts_of_speech
     # ['noun', 'verb', 'adjective']
 
-    definition.noun
+    definition.noun # TODO change this to list to reflect multi definition system
     # {'definition': 'An abandoned person; one openly and shamelessly vicious; a dissolute person.', 'synonyms': [], 'antonyms': []}
 
-    definition.verb.definition
+    definition.verb.synonyms
     # ['overcome']
     """
 
@@ -73,7 +73,7 @@ class Dictionary:
             raise WordNotFoundError(word) from exc
 
     @property
-    def meanings(self) -> dict:
+    def meanings(self) -> list:
         """Returns all meanings for the word
 
         :return dict: meanings are further organised into dictionaries, one for each parts of speech
